@@ -6,6 +6,7 @@ class LibroManager(models.Manager):
         
         def listar_libros(self, kword):
             resultado = self.filter(
-                titulo__icontains=kword
+                titulo__icontains=kword,
+                fecha__range=('2000-01-01','2010-01-01')
             )
             return resultado
